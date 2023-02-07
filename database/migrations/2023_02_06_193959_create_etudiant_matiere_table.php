@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('etudiant_id')->constrained();
             $table->foreignId('matiere_id')->constrained();
             $table->double("note1");
+            $table->double("examen");
 
            
         });

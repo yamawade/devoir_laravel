@@ -39,8 +39,7 @@
                             @foreach ($matiere as $m)
                                 <option value="{{$m->id}}">{{$m->nom_matiere}}</option>
                                 <option value=""></option>
-                            @endforeach
-                            
+                            @endforeach  
                         </select>
                     </div>
                     <div class="form-group">

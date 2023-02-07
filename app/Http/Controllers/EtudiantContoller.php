@@ -5,34 +5,40 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Semestre;
 use App\Models\Matiere;
+use App\Models\Etudiant;
 
 class EtudiantContoller extends Controller
 {
     
     public function index()
     {
-        $etudiant = Etudiant::all();
-        $matiere =  Matiere::all();
-        $semestre = Semestre::all();
-        return view('etudiant', ['etudiant'=>$etudiant ,'matiere'=>$matiere,'semestre'=>$semestre]);
-        
+        //
     }
 
     
     public function create()
     {
-        $matiere = Matiere::all();
+        $etudiant = Etudiant::all();
+        $matiere =  Matiere::all();
         $semestre = Semestre::all();
-        return view('etudiant/ajout');
+        return view('etudiant/ajout', ['etudiant'=>$etudiant ,'matiere'=>$matiere,'semestre'=>$semestre]);
+        // $matiere = Matiere::all();
+        // $semestre = Semestre::all();
+        //return view('etudiant/ajout');
     }
 
     public function store(Request $request)
     {
         $input = $request->all();
         Etudiant::create($input);
-        $etudiant = Etudiant::find($id);
+        
+        
+        return redirect('etudiant/create')->with('flash_message','etudiant créé');
+        // $input = $request->all();
+        // Etudiant::create($input);
+        // $etudiant = Etudiant::find($id);
        
-        return view('etudiant/create',['matiere'=>$matiere,'semestre'=>$semestre]);
+        // return view('etudiant/create',['matiere'=>$matiere,'semestre'=>$semestre]);
     }
 
     
@@ -47,24 +53,13 @@ class EtudiantContoller extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
         //

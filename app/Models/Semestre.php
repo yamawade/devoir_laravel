@@ -11,8 +11,7 @@ class Semestre extends Model
     use HasFactory;
     public $timestamps = false;
     protected $fillable = [
-        "nom_semestre"
-        
+        "nom_semestre"   
     ];
     public function etudiants()
     {
