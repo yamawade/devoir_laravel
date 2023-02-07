@@ -15,16 +15,15 @@ class EtudiantContoller extends Controller
         //
     }
 
-    
+
     public function create()
     {
+        
         $etudiant = Etudiant::all();
         $matiere =  Matiere::all();
         $semestre = Semestre::all();
         return view('etudiant/ajout', ['etudiant'=>$etudiant ,'matiere'=>$matiere,'semestre'=>$semestre]);
-        // $matiere = Matiere::all();
-        // $semestre = Semestre::all();
-        //return view('etudiant/ajout');
+
     }
 
     public function store(Request $request)
