@@ -9,7 +9,7 @@
     </head>
     <body>
         <div class="container">  
-        <a href="" class="btn btn-primary">Liste etudiant</a>
+        <a href="" class="btn btn-primary">Liste Etudiant</a>
             <div class="card col-md-8 offset-2 mt-3">
                 <form action="/store" method="post">
                     @csrf
